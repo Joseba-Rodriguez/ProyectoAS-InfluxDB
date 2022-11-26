@@ -1,0 +1,23 @@
+version: '3.2'
+
+services:
+
+  influxdb:
+    build: influxdb
+    env_file: configuracionInfluxGF.env
+    ports:
+      - '8086:8086' #Puerto base de Influxdb
+
+  grafana:
+    build: grafana
+    env_file: configuracionInfluxGF.env
+    links:
+      - influxdb
+    ports:
+      - '3000:3000' #Puerto base de grafana
+
+  influxdatos:
+    build: ./influxdb/
+
+  grafanadatos:
+    build: ./grafana/
