@@ -2,10 +2,6 @@ version: '3.2'
 
 services:
 
-  influx:
-    image: influxdb
-    env_file: configuracionInfluxGF.env
-    
   influxdb:
     build: influxdb
     env_file: configuracionInfluxGF.env
