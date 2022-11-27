@@ -1,12 +1,18 @@
 version: '3.2'
 
 services:
-
+  influx:
+    image: influxdbç
+    env_file: configuracionInfluxGF.env
+    
   influxdb:
     build: influxdb
     env_file: configuracionInfluxGF.env
     ports:
       - '8086:8086' #Puerto base de Influxdb
+    volumes:
+      - /home/svl/influxdb:/var/lib/influxdb:rw
+      
 
   grafana:
     build: grafana
@@ -16,8 +22,5 @@ services:
     ports:
       - '3000:3000' #Puerto base de grafana
 
-  influxdatos:
-    build: ./influxdb/
-
-  grafanadatos:
-    build: ./grafana/
+volumes:
+  influxdb:
