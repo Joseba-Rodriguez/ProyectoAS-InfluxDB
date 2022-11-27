@@ -10,6 +10,8 @@ if [ ! -f "/var/lib/influxdb/.init" ]; then # Si no tiene el fichero incial de i
 
     influx -host=localhost -port=8086 -execute="CREATE USER "usuario" WITH PASSWORD 'admin' WITH ALL PRIVILEGES" #Crea usuario administrador con todos los privilegios
     influx -host=localhost -port=8086 -execute="CREATE DATABASE "proyectoAS"" # Crea la base de datos en este caso  ProyectoAS
+    influx -host=localhost -port=8086 -execute="SHOW DATABASES" #Muestra las basaes de datos creadas
+    influx -host=localhost -port=8086 -execute="USE "proyectoAS"" #Se necesita utilziar la base de datosy empezar a interactuar
 
     touch "/var/lib/influxdb/.init" # Crea el fichero que no existia 
 
