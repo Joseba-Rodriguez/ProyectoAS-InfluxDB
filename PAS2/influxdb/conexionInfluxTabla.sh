@@ -12,7 +12,7 @@ if [ ! -f "/var/lib/influxdb/.init" ]; then # Si no tiene el fichero incial de i
     influx -host=influxdb -port=8086 -execute="CREATE DATABASE "proyectoAS"" # Crea la base de datos en este caso  ProyectoAS
     influx -host=influxdb -port=8086 -execute="SHOW DATABASES" #Muestra las basaes de datos creadas
     influx -host=influxdb -port=8086 -execute="USE "proyectoAS"" #Se necesita utilziar la base de datosy empezar a interactuar
-
+    influx -host=influxdb -port=8086 -execute="INSERT "DireccionesIP",host="private" value="127001""
     touch "/var/lib/influxdb/.init" # Crea el fichero que no existia 
 
     kill -s TERM %1 # Mata el servicio creado
