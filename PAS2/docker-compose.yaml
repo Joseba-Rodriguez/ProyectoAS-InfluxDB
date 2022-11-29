@@ -17,7 +17,7 @@ services:
     links:
       - influxdb
     ports:
-      - '3000:3000' #Puerto base de grafana
+      - '80:3000' #Puerto base de grafana
 
 volumes:
   influxdb:
