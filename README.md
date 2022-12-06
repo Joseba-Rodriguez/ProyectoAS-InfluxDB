@@ -1,1 +1,2 @@
-# Proyecto-Administración-DeSistemas-InfluxDB
+# Proyecto-Administración-De-Sistemas-InfluxDB
+Joseba Rodríguez Vivanco
