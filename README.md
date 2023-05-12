@@ -12,11 +12,11 @@ Finalmente, el servicio de la aplicación, utiliza una imagen construida a parti
 
 Para iniciar los servicios, ejecute el comando "docker-compose up" en el directorio que contiene el archivo docker-compose.yaml.
 
-##Requisitos
+## Requisitos
 Docker
 Docker Compose
 
-##Configuración
+## Configuración
 Para configurar la aplicación, se deben seguir los siguientes pasos:
 
 Clonar este repositorio en la máquina donde se desee ejecutar la aplicación.
@@ -26,7 +26,7 @@ Una vez que los contenedores estén en funcionamiento, ejecutar el archivo clien
 Uso
 La aplicación genera direcciones IP aleatorias cada 5 segundos y las escribe en la base de datos InfluxDB. Los datos se guardan en la tabla DireccionesIP con el tag IP.
 
-##Contribuciones
+## Contribuciones
 Este proyecto es de código abierto y las contribuciones son bienvenidas. Si desea contribuir, siga los siguientes pasos:
 
 Fork del repositorio.
