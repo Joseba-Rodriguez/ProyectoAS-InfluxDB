@@ -1,35 +1,36 @@
-# Proyecto-Administración-De-Sistemas-InfluxDB
+# System-Administration-InfluxDB
 
-Este proyecto consiste en una aplicación personalizada que genera y escribe direcciones IP aleatorias en una base de datos InfluxDB. El código está escrito en Python y utiliza la librería InfluxDBClient para comunicarse con la base de datos.
+This project is a custom application that generates and writes random IP addresses to an InfluxDB database. The code is written in Python and utilizes the InfluxDBClient library to communicate with the database.
 
-Se definen tres servicios en el docker-compose: InfluxDB, Grafana y la aplicación personalizada.
+Three services are defined in the docker-compose: InfluxDB, Grafana, and the custom application.
 
-El servicio InfluxDB utiliza la imagen influxdb:1.8 y define variables de entorno para habilitar la autenticación y crear usuarios y bases de datos. Además, este servicio mapea el puerto 8086 del contenedor a 8086 en el host y monta el directorio local ./influxdb/ en el directorio /var/lib/influxdb del contenedor.
+The InfluxDB service uses the influxdb:1.8 image and defines environment variables to enable authentication and create users and databases. Additionally, this service maps port 8086 of the container to port 8086 on the host and mounts the local directory ./influxdb/ to the /var/lib/influxdb directory in the container.
 
-El servicio Grafana utiliza una imagen personalizada definida en el directorio ./grafana/ y mapea el puerto 80 del host al puerto 3000 del contenedor.
+The Grafana service uses a custom image defined in the ./grafana/ directory and maps port 80 of the host to port 3000 of the container.
 
-Finalmente, el servicio de la aplicación, utiliza una imagen construida a partir del archivo Dockerfile en el directorio actual. Este servicio depende del servicio InfluxDB y no expone ningún puerto al host.
+Finally, the application service uses an image built from the Dockerfile in the current directory. This service depends on the InfluxDB service and does not expose any ports to the host.
 
-Para iniciar los servicios, ejecute el comando "docker-compose up" en el directorio que contiene el archivo docker-compose.yaml.
+To start the services, run the command "docker-compose up" in the directory that contains the docker-compose.yaml file.
 
-## Requisitos
+## Requirements
 Docker
 Docker Compose
 
-## Configuración
-Para configurar la aplicación, se deben seguir los siguientes pasos:
+## Configuration
+To configure the application, follow these steps:
 
-Clonar este repositorio en la máquina donde se desee ejecutar la aplicación.
-Editar el archivo docker-compose.yml y modificar los parámetros de configuración de InfluxDB según sea necesario, como el nombre de usuario y contraseña.
-Ejecutar el comando docker-compose up para iniciar los contenedores de InfluxDB y Grafana.
-Una vez que los contenedores estén en funcionamiento, ejecutar el archivo clienteInflux.py para comenzar a generar y escribir direcciones IP aleatorias en la base de datos.
-Uso
-La aplicación genera direcciones IP aleatorias cada 5 segundos y las escribe en la base de datos InfluxDB. Los datos se guardan en la tabla DireccionesIP con el tag IP.
+1. Clone this repository on the machine where you want to run the application.
+2. Edit the docker-compose.yml file and modify the InfluxDB configuration parameters as needed, such as the username and password.
+3. Run the command "docker-compose up" to start the InfluxDB and Grafana containers.
+4. Once the containers are up and running, execute the clienteInflux.py file to begin generating and writing random IP addresses to the database.
 
-## Contribuciones
-Este proyecto es de código abierto y las contribuciones son bienvenidas. Si desea contribuir, siga los siguientes pasos:
+## Usage
+The application generates random IP addresses every 5 seconds and writes them to the InfluxDB database. The data is stored in the DireccionesIP table with the IP tag.
 
-Fork del repositorio.
-Cree una nueva rama con su contribución.
-Haga las modificaciones necesarias y pruebe la aplicación.
-Envíe una solicitud de extracción a la rama principal del repositorio original.
+## Contributions
+This project is open source and contributions are welcome. If you would like to contribute, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch with your contribution.
+3. Make the necessary modifications and test the application.
+4. Submit a pull request to the main branch of the original repository.
